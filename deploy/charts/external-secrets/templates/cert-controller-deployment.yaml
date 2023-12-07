@@ -13,6 +13,10 @@ metadata:
 spec:
   replicas: {{ .Values.certController.replicaCount }}
   revisionHistoryLimit: {{ .Values.certController.revisionHistoryLimit }}
+  {{- with .Values.certController.strategy }}
+  strategy:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
   selector:
     matchLabels:
       {{- include "external-secrets-cert-controller.selectorLabels" . | nindent 6 }}

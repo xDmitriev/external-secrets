@@ -195,6 +195,13 @@ affinity: {}
 # -- Pod priority class name.
 priorityClassName: ""
 
+# -- Strategy for updating the pod - for more details see https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy
+strategy: {}
+  # type: RollingUpdate
+  # rollingUpdate:
+  #   maxSurge: 1
+  #   maxUnavailable: 1
+
 # -- Pod disruption budget - for more details see https://kubernetes.io/docs/concepts/workloads/pods/disruptions/
 podDisruptionBudget:
   enabled: false
@@ -287,6 +294,13 @@ webhook:
   topologySpreadConstraints: []
 
   affinity: {}
+
+  # -- Strategy for updating the pod - for more details see https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy
+  strategy: {}
+    # type: RollingUpdate
+    # rollingUpdate:
+    #   maxSurge: 1
+    #   maxUnavailable: 1
 
     # -- Pod priority class name.
   priorityClassName: ""
@@ -400,6 +414,13 @@ certController:
   topologySpreadConstraints: []
 
   affinity: {}
+
+  # -- Strategy for updating the pod - for more details see https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy
+  strategy: {}
+    # type: RollingUpdate
+    # rollingUpdate:
+  #   maxSurge: 1
+  #   maxUnavailable: 1
 
   # -- Run the certController on the host network
   hostNetwork: false
